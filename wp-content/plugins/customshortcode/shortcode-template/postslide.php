@@ -1,8 +1,8 @@
 <?php
 function create_gallery_slider($attrs) {
   extract(shortcode_atts (array(
-    'post_type' => 'video',
-    'per_page' => 4,
+    'post_type' => '',
+    'per_page' => ,
   ), $attrs));
 
   ob_start();
@@ -14,11 +14,11 @@ function create_gallery_slider($attrs) {
 
     $my_query = null;
     $my_query = new WP_Query($args);
-    if( $my_query->have_posts() ) { 
-      if ($post_type == 'video') { ?>
+    if( $my_query->have_posts() ) {
+      if ($post_type = 'video') { ?>
         <div class="video-event-list">
           <div class="main-slick">
-          <?php 
+          <?php
           while ($my_query->have_posts()) : $my_query->the_post();
 
           $video_type = types_render_field("video", array());
@@ -48,9 +48,9 @@ function create_gallery_slider($attrs) {
           endwhile;
           ?>
           </div>
-          
+
           <div class="sub-slick">
-          <?php 
+          <?php
           while ($my_query->have_posts()) : $my_query->the_post();
 
           $video_type = types_render_field("video", array());
@@ -83,7 +83,12 @@ function create_gallery_slider($attrs) {
         </div>
 
 
-      <?php 
+      <?php
+      } elseif ($post_type = 'gallerys') { ?>
+        <div class="video-event-list">
+        <p>abc</p>
+        </div>
+      <?php
       }
     }
 

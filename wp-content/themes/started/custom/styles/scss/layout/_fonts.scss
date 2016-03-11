@@ -1,0 +1,40 @@
+@import url(http://fonts.googleapis.com/css?family=Lato);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+@font-face {
+	font-family: 'BebasNeuewebfont';
+	src: url('../../framework-assets/fonts/BebasNeuewebfont.eot');
+	src: local('../../framework-assets/fonts/BebasNeuewebfont'),
+	 url('../../framework-assets/fonts/BebasNeuewebfont.woff') format('woff'),
+	url('../../framework-assets/fonts/BebasNeuewebfont.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'UbuntuMedium';
+    src: url('../../framework-assets/fonts/UbuntuMedium.eot');
+    src: url('../../framework-assets/fonts/UbuntuMedium.eot') format('embedded-opentype'),
+         url('../../framework-assets/fonts/UbuntuMedium.woff2') format('woff2'),
+         url('../../framework-assets/fonts/UbuntuMedium.woff') format('woff'),
+         url('../../framework-assets/fonts/UbuntuMedium.ttf') format('truetype'),
+         url('../../framework-assets/fonts/UbuntuMedium.svg#UbuntuMedium') format('svg');
+}
+
+@font-face {
+    font-family: 'Candara';
+    src: url('../../framework-assets/fonts/Candara.eot');
+    src: url('../../framework-assets/fonts/Candara.eot') format('embedded-opentype'),
+         url('../../framework-assets/fonts/Candara.woff2') format('woff2'),
+         url('../../framework-assets/fonts/Candara.woff') format('woff'),
+         url('../../framework-assets/fonts/Candara.ttf') format('truetype'),
+         url('../../framework-assets/fonts/Candara.svg#Candara') format('svg');
+}
+
+@font-face {
+    font-family: 'MonotypeCorsiva';
+    src: url('../../framework-assets/fonts/MonotypeCorsiva.eot');
+    src: url('../../framework-assets/fonts/MonotypeCorsiva.eot') format('embedded-opentype'),
+         url('../../framework-assets/fonts/MonotypeCorsiva.woff2') format('woff2'),
+         url('../../framework-assets/fonts/MonotypeCorsiva.woff') format('woff'),
+         url('../../framework-assets/fonts/MonotypeCorsiva.ttf') format('truetype'),
+         url('../../framework-assets/fonts/MonotypeCorsiva.svg#Candara') format('svg');
+}

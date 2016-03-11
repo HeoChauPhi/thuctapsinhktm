@@ -1,0 +1,109 @@
+//style button css
+button, .button {
+	background: $green;
+	border: medium none;
+	border-radius: 2px;
+	box-shadow: none;
+	color: #fff;
+	font-size: 0.9em;
+	font-weight: 700;
+	padding: 6px 15px;
+	text-decoration: none;
+	margin-bottom: 10px;
+
+	&:hover {
+    color: $white !important;
+    opacity: 0.65;
+	}
+}
+
+//style table-layout:
+
+table {
+  width: 100%;
+  background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+	border: 1px solid #dddddd;
+	margin-bottom: 1.42857em;
+	border-collapse: collapse;
+}
+
+table thead, table tfoot {
+  background: none repeat scroll 0 0 whitesmoke;
+  font-weight: bold;
+}
+
+tbody {
+  border-top: 1px solid #ccc;
+}
+
+h1 {
+	background: #fff;
+	padding: 10px;
+	margin-top: 0;
+}
+
+.thu-vien {
+	.vc_images_carousel {
+	  padding-top: 10px;
+	  padding-bottom: 10px;
+	  .attachment-full {
+			height: 160px;
+			width: auto !important;
+		}
+	}
+
+	.wpb_images_carousel {
+
+		.icon-prev {
+			background: none;
+		}
+
+		.icon-next {
+			background: none;
+		}
+
+	}
+}
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+}
+h2.vc_custom_heading,
+h2.block-title {
+	line-height: 20px;
+	margin-bottom: 15px;
+	margin-top: 15px;
+	text-transform: capitalize;
+  padding: 5px 15px 5px 5px;
+	border-radius: 4px 4px 0 0;
+	color: #000;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+ul {
+ margin:  0 0 10px 18px;
+
+  li {
+    list-style: outside none none;
+    position: relative;
+
+    &:before {
+      font-family: "fontawesome";
+      content: "\f105";
+      font-size: 16px;
+      left: -9px;
+      position: absolute;
+      top: 0;
+    }
+  }
+}
+
+ul[class*="select"] {
+  li {
+    &:before {
+      content: "";
+    }
+  }
+}
+
+

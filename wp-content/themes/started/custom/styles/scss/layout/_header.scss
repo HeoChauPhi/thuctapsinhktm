@@ -1,0 +1,218 @@
+header {
+  .container {
+    //background: none repeat scroll 0 0 rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    position: relative;
+    /* &:before {
+      background-image: url("../../framework-assets/images/banner.png");
+      background-repeat: no-repeat;
+      content: "";
+      height: 180px;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: -1;
+    } */
+  }
+}
+
+.logo {
+  width: 20%;
+}
+
+.site-info {
+  // float: left;
+  width: 70%;
+  padding: 0 10px;
+  text-align: center;
+  line-height: 1.5;
+  .site-name {
+    color: #fff;
+    font-weight: bold;
+    font-size: 26px;
+    font-family: 'Candara';
+    text-shadow: 2px 0 2px #000, -2px 0 2px #000, 0 2px 2px #000, 0 -2px 2px #000;
+    margin-bottom: 3px;
+  }
+  .site-title {
+    font-size: 22px;
+    font-family: 'MonotypeCorsiva';
+    font-weight: 700;
+    color: #087f1c;
+    margin-bottom: 0;
+  }
+}
+
+.block-search {
+  .search-wrapper {
+    overflow: hidden;
+    background-color: white;
+  }
+  .search {
+    //float: right;
+    margin: 0;
+    position: relative;
+    width: 280px;
+    //display: none;
+  }
+
+  .search-input {
+    width: 100%;
+    margin: 0;
+    padding-right: 50px;
+    @include box-sizing(border-box);
+  }
+  .search-submit {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    text-indent: -999em;
+    top: 0;
+    width: 40px;
+    border-radius: 0;
+
+    &:before {
+      width: 100%;
+      height: 100%;
+      text-align: center !important;
+      padding-right: 0;
+      float: left;
+      line-height: 31px !important;
+      background: transparent;
+      text-indent: 0;
+      font-size: 21px;
+      content: "\f002";
+      font-family: 'fontawesome';
+    }
+  }
+
+  .toggle-search {
+    cursor: pointer;
+    right: 0;
+    text-align: center;
+    text-indent: -999em;
+    top: 0;
+    float: right;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    color: white;
+    opacity: 1;
+    &:before {
+      font-family: 'fontawesome';
+      width: 100%;
+      height: 100%;
+      text-align: center !important;
+      padding-right: 0;
+      float: left;
+      line-height: 50px !important;
+      background: transparent;
+      text-indent: 0;
+      font-size: 21px;
+      content: "\f002";
+    }
+    &.close:before {
+      content: "\f00d";
+    }
+  }
+}
+
+.menubar {
+  position: relative;
+  .container {
+    background-color: transparent;
+    padding: 0;
+  }
+}
+
+.nav {
+  background: none repeat scroll 0 0 rgba(215, 215, 215, 0.9);
+  padding: 0;
+  margin-bottom: 0;
+  ul {
+    margin: 0;
+
+    li.menu-item-has-children {
+      position: relative;
+    }
+
+    li{
+      list-style: none;
+      float: left;
+
+      &:before {
+        display: none;
+      }
+
+      a {
+        color: #000;
+        display: block;
+        font-size: 16px;
+        font-weight: bold;
+        padding: 15px 20px;
+        border-right: 1px solid #B0B0B0;
+        font-family: 'Candara';
+        transition: all 0.3s;
+
+        &:hover {
+          color: #fff;
+          background: #000;
+        }
+      }
+      ul.sub-menu {
+        background: none repeat scroll 0 0 rgb(234, 234, 234);
+        opacity: 0;
+        position: absolute;
+        top: 80%;
+        transition: all 0.2s ease 0s;
+        width: 200px;
+        z-index: -1;
+        li {
+          width: 100%;
+          border-bottom: 1px solid #ccc;
+          &:last-of-type {
+            border: none;
+          }
+          a {
+            border: none;
+          }
+        }
+      }
+      &:hover {
+        ul.sub-menu {
+          opacity: 1;
+          top: 100%;
+          z-index: 99;
+        }
+      }
+    }
+  }
+}
+
+.logo,
+.block-language,
+.site-info{
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.block-language {
+  width: 120px;
+  text-align: right;
+  vertical-align: bottom;
+  min-width: 20%;
+  .block-title {
+    display: none;
+  }
+  .lang-item {
+    display: inline;
+    text-align: right;
+    img {
+      height: auto;
+      width: 30px;
+    }
+  }
+}

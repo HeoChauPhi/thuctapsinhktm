@@ -1,0 +1,41 @@
+
+*, *:after, *:before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+
+ // @include background-image(linear-gradient(#ffffff, #81fefe));
+  //background: url("../../framework-assets/images/background/bg-body.jpg") no-repeat scroll center center transparent;
+  background-attachment: fixed;
+  background-size: cover;
+  position: relative;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 100%;
+  //box-shadow: 0 0 12px 0 #000000;
+}
+
+.container {
+  background: none repeat scroll 0 0 #fff;
+  // max-width: 960px;
+  padding: 0 15px;
+  width: 100%;
+}
+
+.main-content .container {
+}
+
+#cf-wrapper {
+    display: none;
+}
+
+.feature {
+  overflow: hidden;
+  max-height: 280px;
+}

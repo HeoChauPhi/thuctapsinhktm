@@ -92,8 +92,8 @@ class WPBMap {
 
 		// @todo fix_roles? what is this and why it is inside class-wpb-map?
 		if ( null !== self::$settings ) {
-			if ( function_exists( 'get_currentuserinfo' ) ) {
-				get_currentuserinfo();
+			if ( function_exists( 'wp_get_current_user' ) ) {
+				wp_get_current_user();
 				/** @var Vc_Settings $settings - get use group access rules */
 				if ( ! empty( $current_user->roles ) ) {
 					self::$user_role = $current_user->roles[0];
@@ -447,7 +447,7 @@ class WPBMap {
 		if ( isset( self::$sc[ $name ], self::$sc[ $name ]['params'] ) && is_array( self::$sc[ $name ]['params'] ) ) {
 			foreach ( self::$sc[ $name ]['params'] as $index => $param ) {
 				if ( $param['param_name'] == $attribute_name ) {
-					array_splice( self::$sc[ $name ]['params'], $index, 1 );
+					unset( self::$sc[ $name ][ 'params' ][ $index ] );
 
 					return true;
 				}
@@ -672,7 +672,7 @@ class WPBMap {
 	}
 
 	/**
-	 * Sorting method for WPBMap::generateUserData method. Called by usort php function.
+	 * Sorting method for WPBMap::generateUserData method. Called by uasort php function.
 	 * @deprecated - use Vc_Sort::sortByKey since 4.4
 	 * @static
 	 *

@@ -84,10 +84,21 @@ function create_gallery_slider($attrs) {
 
 
       <?php
-      } elseif ($posttype == 'gallerys') { ?>
-        <div class="video-event-list">
-        <p>abc</p>
+      }
+
+      else if ($posttype == 'gallerys') {?>
+        <div class="gallery-list">
+          <div class="1main-slick">
+            <?php
+
+            while ($my_query->have_posts()) : $my_query->the_post();
+              $image_type = types_render_field("gallery-image", array());
+              echo '<div class="gallery-post">'.$image_type.'</div>';
+            endwhile;
+            ?>
+          </div>
         </div>
+
       <?php
       }
     }

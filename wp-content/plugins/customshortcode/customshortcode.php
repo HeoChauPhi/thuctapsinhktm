@@ -17,7 +17,7 @@ include ($custom_path.'shortcode-template/usershortcode.php');
 
 // Add Jquery and Stylesheet
 add_action('wp_enqueue_scripts', 'customs_plugin_scripts');
-function customs_plugin_scripts() {  
+function customs_plugin_scripts() {
   wp_register_script('slick', plugin_dir_url( __FILE__ ) . 'scripts/libs/slick.min.js', array('jquery')); // Custom scripts
   wp_enqueue_script('slick'); // Enqueue it!
 

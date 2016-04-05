@@ -88,12 +88,21 @@ function create_gallery_slider($attrs) {
 
       else if ($posttype == 'gallerys') {?>
         <div class="gallery-list">
-          <div class="1main-slick">
+          <div class="slide-carousel">
             <?php
 
             while ($my_query->have_posts()) : $my_query->the_post();
-              $image_type = types_render_field("gallery-image", array());
-              echo '<div class="gallery-post">'.$image_type.'</div>';
+              $image_type = types_render_field("gallery-thumbnail", array()); ?>
+              <div class="gallery-post">
+                <div class="gallery-image">
+                  <?php echo $image_type; ?>
+                </div>
+                <div class="gallery-content">
+                  <div class="gallery-link"><a href="<?php the_permalink(); ?>">learn more</a></div>
+                  <div  class="gallery-title"><?php the_title(); ?></div>
+                </div>
+              </div>
+              <?php
             endwhile;
             ?>
           </div>

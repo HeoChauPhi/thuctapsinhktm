@@ -197,4 +197,17 @@ function create_view_all_post($cats) {
   return $view_all_post;
   wp_reset_postdata();
 }
+
+function create_search_post($cats) {
+  extract(shortcode_atts (array(
+    'cat_id'       => '',
+    'per_page'    => ''
+  ), $cats));
+  ob_start();
+    echo '<input type="search" id="post-search-input" name="s" value="" class="">';
+    $search_post = ob_get_contents();
+  ob_end_clean();
+  return $search_post;
+  wp_reset_postdata();
+}
 ?>

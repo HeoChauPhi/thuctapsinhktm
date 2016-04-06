@@ -109,6 +109,28 @@ function create_gallery_slider($attrs) {
         </div>
 
       <?php
+      } else if($posttype == 'student') { ?>
+        <div class="gallery-list">
+          <div class="slide-carousel">
+            <?php
+
+            while ($my_query->have_posts()) : $my_query->the_post();
+              $student_img = types_render_field("student-image", array()); ?>
+              <div class="student-post">
+                <div class="student-image">
+                  <?php echo $student_img; ?>
+                </div>
+                <div class="student-content">
+                  <div class="student-link"><a href="<?php the_permalink(); ?>">learn more</a></div>
+                  <div  class="student-title"><?php the_title(); ?></div>
+                </div>
+              </div>
+              <?php
+            endwhile;
+            ?>
+          </div>
+        </div>
+      <?php
       }
     }
 

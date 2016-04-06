@@ -34,6 +34,12 @@ function customs_plugin_styles() {
   wp_enqueue_style('slick-style');
 }
 
+add_action( 'admin_head', 'customs_plugin_admin_scripts' );
+
+function customs_plugin_admin_scripts() {
+  echo '<script type="text/javascript" src="' . plugin_dir_url( __FILE__ ) . 'scripts/admin-script.js"></script>';
+}
+
 // Add Custom Shortcode
 add_shortcode( 'count_per_day', 'create_count_per_day' );
 function create_count_per_day() {

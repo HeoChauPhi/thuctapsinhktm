@@ -15,6 +15,13 @@ include ($custom_path.'shortcode-template/postshortcode.php');
 include ($custom_path.'shortcode-template/postslide.php');
 include ($custom_path.'shortcode-template/usershortcode.php');
 
+add_action('admin_head','test_jquery');
+function test_jquery() {
+  ?>
+    <script type="text/javascript">var BASE = "<?php echo home_url() ?>";</script>
+  <?php
+}
+
 // Add Jquery and Stylesheet
 add_action('wp_enqueue_scripts', 'customs_plugin_scripts');
 function customs_plugin_scripts() {
@@ -61,6 +68,9 @@ function create_count_per_day() {
   return $count_perday;
   wp_reset_postdata();
 }
+
+add_action('wp_ajax_nopriv_dhemy_ajax_search','dhemy_ajax_search');
+add_action('wp_ajax_dhemy_ajax_search','dhemy_ajax_search');
 
 // Add Post shortcode
 add_shortcode( 'view_post_cat', 'create_view_post_cat' );

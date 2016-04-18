@@ -1,16 +1,25 @@
 (function($) {
 
+  function AddMarkupSearch() {
+    var TextSearch = $('.vc_shortcode-param').find('input[type*="text"]');
+    TextSearch.one( "focus", function() {
+      if ($(this).next('.dhemy-ajax-search').lenght > 0){
+        console.log('remove');
+        $(this).next('.dhemy-ajax-search').remove();
+      } else {
+        console.log('add');
+        $(this).after('<ul class="dhemy-ajax-search"></ul>');
+      }
+
+    });
+    //TextSearch.hasClass('add_post').after('<ul class="dhemy-ajax-search"></ul>');
+  }
+
   function SearchPostAjax() {
     /*$('input.add_post').on('click', function() {
       console.log('heochaua');
     });*/
-
-    if($('input.add_post').parent('.edit_form_line').has('ul.dhemy-ajax-search')){
-      console.log('yes');
-    } else {
-      console.log('no');
-    }
-    $('input.add_post').parent('.edit_form_line').has('ul.dhemy-ajax-search').empty();
+    //$('.dhemy-ajax-search').empty();
 
     $('input.add_post').keypress(function(event) {
       // prevent browser autocomplete
@@ -20,7 +29,6 @@
 
       // send request when the lenght is gt 2 letters
       if(searchTerm.length > 0){
-        console.log('ok');
         $.ajax({
           url : BASE+'/wp-admin/admin-ajax.php',
           type:"POST",
@@ -30,7 +38,7 @@
           },
           success:function(result){
             $(this).next('.dhemy-ajax-search').empty();
-            $('.dhemy-ajax-search').fadeIn().html(result);
+            $(this).next('.dhemy-ajax-search').html(result);
           }
         });
       } else if(searchTerm.length == 0) {
@@ -39,11 +47,16 @@
     });
   }
 
-  $(window).load(function(){});
-
-  $(document).ready(function() {});
-
-  $(document).ajaxComplete(function() {
+  $(window).load(function(){
     SearchPostAjax();
+    AddMarkupSearch();
+  });
+
+  $(document).ready(function() {
+  });
+
+  $(document).ajaxStart(function() {
+    AddMarkupSearch();
+    //SearchPostAjax();
   });
 })( jQuery );
